@@ -1,9 +1,9 @@
-import Clock from "./Components/Clock"
+
 
 function App() {
   return (
       <div>
-        <div><Clock/></div>
+        <div>Hello World</div>
       </div>
   )
 }
