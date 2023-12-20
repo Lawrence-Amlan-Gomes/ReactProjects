@@ -5,7 +5,7 @@ import classes from "../Styles/Header.module.css";
 export default function Header() {
   return (
     <div className={classes.header}>
-      <div className={classes.allWorks}>All Projects</div>
+      <div className={classes.allWorks}>ALL PROJECTS</div>
       <ul>
         <li className={classes.listStyle}>
           <NavLink to="/hello" className={(navInfo)=>(

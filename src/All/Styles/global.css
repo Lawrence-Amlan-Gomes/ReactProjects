@@ -1,5 +1,7 @@
 body{
     margin-top: 20px;
+    background-color: rgb(239, 239, 239);
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif
 }
 .bodyPart{
     font-size: 25px;

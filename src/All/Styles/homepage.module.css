@@ -1,0 +1,9 @@
+.homeItem{
+    font-weight: bolder;
+    color: rgb(0, 23, 156);
+    font-size: 50px;
+}
+.homeItem:hover{
+    color: rgb(0, 17, 112);
+    cursor: pointer;
+}

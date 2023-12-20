@@ -1,0 +1,41 @@
+.box{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 400px;
+    width: 300px;
+    border: 2px solid black;
+    border-radius: 10px;
+    overflow: hidden;
+    font-weight: bold;
+}
+.items{
+    width: 100%;
+    text-align: center;
+    margin-top: 60px;
+    margin-bottom: 60px;
+}
+.image1{
+    height: 60px;
+    border: 1px solid black;
+    border-radius: 20px;
+    background-color: aliceblue;
+}
+.image2{
+    height: 60px;
+    border-radius: 20px;
+    background-color: rgb(23, 23, 23);
+}
+.dark{
+    background-color: rgb(23, 23, 23);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 400px;
+    width: 300px;
+    border-radius: 10px;
+    overflow: hidden;
+    font-weight: bold;
+    color: aliceblue;
+}
+

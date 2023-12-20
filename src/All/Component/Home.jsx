@@ -1,8 +1,8 @@
-import {classes} from "../Styles/home.module.css";
+import homeitem from "../Styles/homepage.module.css";
 export default function Home() {
     return (
       <div>
-        <div className={classes.home}>Hello Welcome to My React JS Projects</div>
+        <div className={homeitem.homeItem}>Welcome to My React JS Projects</div>
       </div>
     );
   }
