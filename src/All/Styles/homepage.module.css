@@ -1,3 +1,9 @@
+.mainBox{
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
 .homeItem{
     font-weight: bolder;
     color: rgb(0, 23, 156);
@@ -6,7 +12,4 @@
 .homeItem:hover{
     color: rgb(0, 17, 112);
     cursor: pointer;
-}
-.mainBox{
-    
 }

@@ -1,11 +1,19 @@
 body{
-    margin-top: 20px;
     background-color: rgb(239, 239, 239);
     font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif
 }
-.footer{
-    height: 50px;
+.container{
+    position: relative;
+    overflow: hidden;
+}
+.header{
+    width: 100%;
+    float: left;
 }
 .bodyPart{
-    background-color: rgb(255, 0, 0);
+    width: 100%;
+    float: left;
+}
+.footer{
+    height: 50px;
 }

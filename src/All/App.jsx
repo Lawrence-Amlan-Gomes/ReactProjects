@@ -8,11 +8,10 @@ import App2 from "../Project2/App";
 
 function App() {
   return (
-      <div>
+      <div className="Container">
         <div className="header">
           <Header/>
         </div>
-        <br></br>
         <div className="bodyPart">
           <Routes>
             <Route path="/" element={<Navigate to="/hello" />}/>

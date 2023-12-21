@@ -25,16 +25,18 @@ export default function Project1(){
     }
 
     return(
-        <div className={className}>
-            <div className={classes.item2}>
-                <div className={classes.items}>
-                    Theme
-                </div>
-                <div className={classes.items}>
-                    {themeName}
-                </div>
-                <div className={classes.items} onClick={changeTheme}>
-                    <img className={imageClassName} src={imageName} alt="sun"  onClick={changeTheme}/>
+        <div className={classes.mainBox}>
+            <div className={className}>
+                <div className={classes.item2}>
+                    <div className={classes.items}>
+                        Theme
+                    </div>
+                    <div className={classes.items}>
+                        {themeName}
+                    </div>
+                    <div className={classes.items} onClick={changeTheme}>
+                        <img className={imageClassName} src={imageName} alt="sun"  onClick={changeTheme}/>
+                    </div>
                 </div>
             </div>
         </div>
