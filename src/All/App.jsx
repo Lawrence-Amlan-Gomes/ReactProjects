@@ -7,15 +7,13 @@ import App2 from "../Project2/App";
 
 
 function App() {
-  let height = window.innerHeight;
-  height = height*0.7
   return (
       <div>
         <div className="header">
           <Header/>
         </div>
         <br></br>
-        <div className="bodyPart" style={height={height}}>
+        <div className="bodyPart">
           <Routes>
             <Route path="/" element={<Navigate to="/hello" />}/>
             <Route path="/hello" element={<Home />}/>

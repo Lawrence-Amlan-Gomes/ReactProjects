@@ -28,9 +28,15 @@
   text-decoration: none;
 }
 .allWorks{
+  float: left;
+  width: 100%;
   text-align: center;
   font-size: 30px;
 }
-.header{
-  overflow: hidden;
+.header2{
+  float: left;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
