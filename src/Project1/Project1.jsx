@@ -4,41 +4,41 @@ import { useState } from "react";
 import moon from "./images/moon.png";
 export default function Project1(){
     const [theme, setTheme] = useState(false);
-    function changeTheme(mode){
-        setTheme(mode)
+    const [themeName, setThemeName] = useState("Light");
+    const [imageName, setImageName] = useState(`${moon}`);
+    const [className, setClassname] = useState(`${classes.light}`)
+    const [imageClassName, setImageClassname] = useState(`${classes.image2}`)
+    function changeTheme(){
+        if (theme){
+            setTheme(false)
+            setImageName(`${moon}`)
+            setThemeName("Light")
+            setClassname(`${classes.light}`)
+            setImageClassname(`${classes.image2}`)
+        }else{
+            setTheme(true)
+            setImageName(`${sun}`)
+            setThemeName("Dark")
+            setClassname(`${classes.dark}`)
+            setImageClassname(`${classes.image1}`)
+        }
     }
-    if (theme) {
-        return(
-            <div className={classes.dark}>
-                <div className={classes.item2}>
-                    <div className={classes.items}>
-                        Project 1
-                    </div>
-                    <div className={classes.items}>
-                        Dark
-                    </div>
-                    <div className={classes.items} onClick={()=>changeTheme(false)}>
-                        <img className={classes.image1} src={sun} alt="sun"  onClick={()=>changeTheme(false)}/>
-                    </div>
+
+    return(
+        <div className={className}>
+            <div className={classes.item2}>
+                <div className={classes.items}>
+                    Theme
+                </div>
+                <div className={classes.items}>
+                    {themeName}
+                </div>
+                <div className={classes.items} onClick={changeTheme}>
+                    <img className={imageClassName} src={imageName} alt="sun"  onClick={changeTheme}/>
                 </div>
             </div>
-        )
-    }else{
-        return(
-            <div className={classes.box}>
-                <div className={classes.item2}>
-                    <div className={classes.items}>
-                        Project 1
-                    </div>
-                    <div className={classes.items}>
-                        Light
-                    </div>
-                    <div className={classes.items} onClick={()=>changeTheme(true)}>
-                        <img className={classes.image2} src={moon} alt="sun" onClick={()=>changeTheme(true)}/>
-                    </div>
-                </div>
-            </div>
-        )
-    }
+        </div>
+    )
+
     
 }
