@@ -10,20 +10,29 @@ export default function Project2(){
     const [box7, setBox7] = useState("");
     const [box8, setBox8] = useState("");
     const [box9, setBox9] = useState("");
-    const [prevValue, setPrevValue] = useState("O");
+    const [prevValue, setPrevValue] = useState("o");
     const [result, setResult] = useState("Match Result");
     const [counter, setCounter] = useState(0);
 
     function changePrev() {
-      if (prevValue == "O"){
-        setPrevValue("X")
-      }else{
-        setPrevValue("O")
+      setPrevValue((prevState)=>{
+        if(prevState == "o"){
+          return "x";
+        }else{
+          return "o";
+        }
+      })
       }
-    }
 
     function resultFunc() {
-      if(counter >= 8){
+      if (box1 == box2){
+        if(box2 == box3){
+          if(box1 != ""){
+            setResult(`Player ${box1} Won`)
+          }
+        }
+      }
+      else if(counter == 8){
         setResult("Tie")
       }
     }
@@ -121,41 +130,48 @@ export default function Project2(){
       setBox9("");
       setResult("Match Result")
       setCounter(0)
+      setPrevValue("o")
     }
 
     return(
+      <div className={classes.container}>
         <div className={classes.box}>
-          <div className={classes.section1}>
-            Tic Tac Toe
-          </div>
-          <div className={classes.section2}>
-            <div className={classes.playBox}>
-              <div className={`${classes.boxes}`} onClick={()=>ticTac(1)}>
-                {box1}</div>
-              <div className={`${classes.boxes} ${classes.middleBoxes2}`} onClick={()=>ticTac(2)}>
-                {box2}</div>
-              <div className={`${classes.boxes}`} onClick={()=>ticTac(3)}>
-                {box3}</div>
-              <div className={`${classes.boxes} ${classes.middleBoxes}`} onClick={()=>ticTac(4)}>
-                {box4}</div>
-              <div className={`${classes.boxes} ${classes.middleBoxes} ${classes.middleBoxes2}`} onClick={()=>ticTac(5)}>
-                {box5}</div>
-              <div className={`${classes.boxes} ${classes.middleBoxes}`} onClick={()=>ticTac(6)}>
-                {box6}</div>
-              <div className={`${classes.boxes}`} onClick={()=>ticTac(7)}>
-                {box7}</div>
-              <div className={`${classes.boxes} ${classes.middleBoxes2}`} onClick={()=>ticTac(8)}>
-                {box8}</div>
-              <div className={`${classes.boxes}`} onClick={()=>ticTac(9)}>
-                {box9}</div>
+          <div className={classes.subBox}>
+            <div className={classes.section1}>
+              Tic Tac Toe
+            </div>
+            <div className={classes.section2}>
+              <div className={classes.playBox}>
+                <div className={`${classes.boxes}`} onClick={()=>ticTac(1)}>
+                  {box1}</div>
+                <div className={`${classes.boxes} ${classes.middleBoxes2}`} onClick={()=>ticTac(2)}>
+                  {box2}</div>
+                <div className={`${classes.boxes}`} onClick={()=>ticTac(3)}>
+                  {box3}</div>
+                <div className={`${classes.boxes} ${classes.middleBoxes}`} onClick={()=>ticTac(4)}>
+                  {box4}</div>
+                <div className={`${classes.boxes} ${classes.middleBoxes} ${classes.middleBoxes2}`} onClick={()=>ticTac(5)}>
+                  {box5}</div>
+                <div className={`${classes.boxes} ${classes.middleBoxes}`} onClick={()=>ticTac(6)}>
+                  {box6}</div>
+                <div className={`${classes.boxes}`} onClick={()=>ticTac(7)}>
+                  {box7}</div>
+                <div className={`${classes.boxes} ${classes.middleBoxes2}`} onClick={()=>ticTac(8)}>
+                  {box8}</div>
+                <div className={`${classes.boxes}`} onClick={()=>ticTac(9)}>
+                  {box9}</div>
+              </div>
+            </div>
+            <div className={classes.result}>
+            {result}
+            </div>
+            <div className={classes.restartBox}>
+              <button className={classes.restart} onClick={restart}>
+                Restart
+              </button>
             </div>
           </div>
-          <div className={classes.result}>
-          {result}
-          </div>
-          <button className={classes.restart} onClick={restart}>
-            Restart
-          </button>
         </div>
+      </div>
     )
 }
