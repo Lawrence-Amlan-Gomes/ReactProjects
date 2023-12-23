@@ -1,5 +1,5 @@
 import classes from "./Styles/project2.module.css";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 export default function Project2(){
     const [box1, setBox1] = useState("");
     const [box2, setBox2] = useState("");
@@ -10,11 +10,23 @@ export default function Project2(){
     const [box7, setBox7] = useState("");
     const [box8, setBox8] = useState("");
     const [box9, setBox9] = useState("");
+
+    const [winLine123, setWinLine123] = useState(false);
+    const [winLine456, setWinLine456] = useState(false);
+    const [winLine789, setWinLine789] = useState(false);
+    const [winLine147, setWinLine147] = useState(false);
+    const [winLine258, setWinLine258] = useState(false);
+    const [winLine369, setWinLine369] = useState(false);
+    const [winLine159, setWinLine159] = useState(false);
+    const [winLine357, setWinLine357] = useState(false);
+
     const [prevValue, setPrevValue] = useState("o");
     const [result, setResult] = useState("Match Result");
     const [counter, setCounter] = useState(0);
+    const [runTicTac, setRunTicTac] = useState(true);
 
     function changePrev() {
+      incrementCount();
       setPrevValue((prevState)=>{
         if(prevState == "o"){
           return "x";
@@ -23,100 +35,117 @@ export default function Project2(){
         }
       })
       }
+    function incrementCount() {
+      setCounter((prevState)=>prevState+1);
+    }
 
-    function resultFunc() {
-      if (box1 == box2){
-        if(box2 == box3){
-          if(box1 != ""){
-            setResult(`Player ${box1} Won`)
-          }
+    function ticTac(num=0){
+      if(runTicTac == true){
+        switch (num) {
+          case 1:
+            if(box1 == ""){
+              setBox1(prevValue)
+              changePrev();
+            }
+            break;
+          case 2:
+            if(box2 == ""){
+              setBox2(prevValue)
+              changePrev();
+            }
+            break;
+          case 3:
+            if(box3 == ""){
+              setBox3((prevState)=>prevState=prevValue);
+              changePrev();
+            }
+            break;
+          case 4:
+            if(box4 == ""){
+              setBox4(prevValue)
+              changePrev();
+            }
+            break;
+          case 5:
+            if(box5 == ""){
+              setBox5(prevValue)
+              changePrev();
+            }
+            break;
+          case 6:
+            if(box6 == ""){
+              setBox6(prevValue)
+              changePrev();
+            }
+            break;
+          case 7:
+            if(box7 == ""){
+              setBox7(prevValue)
+              changePrev();
+            }
+            break;
+          case 8:
+            if(box8 == ""){
+              setBox8(prevValue)
+              changePrev();
+            }
+            break;
+          case 9:
+            if(box9 == ""){
+              setBox9(prevValue)
+              changePrev();
+            }
         }
       }
-      else if(counter == 8){
-        setResult("Tie")
+    }
+
+    useEffect(()=>{
+
+      if (((box1 == box2)&&(box2 == box3))&&(box1 != "")){
+        setResult(`Player ${box1} Won`);
+        setRunTicTac(false);
+        setWinLine123(true);
       }
-    }
-
-    function incrementCount() {
-      setCounter((prevState)=>prevState+1)
-    }
-
-    function ticTac(num){
-      switch (num) {
-        case 1:
-          if(box1 == ""){
-            setBox1(prevValue)
-            changePrev();
-            incrementCount();
-            resultFunc();
-          }
-          break;
-        case 2:
-          if(box2 == ""){
-            setBox2(prevValue)
-            incrementCount();
-            changePrev();
-            resultFunc();
-          }
-          break;
-        case 3:
-          if(box3 == ""){
-            setBox3(prevValue)
-            changePrev();
-            incrementCount();
-            resultFunc();
-          }
-          break;
-        case 4:
-          if(box4 == ""){
-            setBox4(prevValue)
-            changePrev();
-            incrementCount();
-            resultFunc();
-          }
-          break;
-        case 5:
-          if(box5 == ""){
-            setBox5(prevValue)
-            changePrev();
-            incrementCount();
-            resultFunc();
-          }
-          break;
-        case 6:
-          if(box6 == ""){
-            setBox6(prevValue)
-            changePrev();
-            incrementCount();
-            resultFunc();
-          }
-          break;
-        case 7:
-          if(box7 == ""){
-            setBox7(prevValue)
-            changePrev();
-            incrementCount();
-            resultFunc();
-          }
-          break;
-        case 8:
-          if(box8 == ""){
-            setBox8(prevValue)
-            changePrev();
-            incrementCount();
-            resultFunc();
-          }
-          break;
-        case 9:
-          if(box9 == ""){
-            setBox9(prevValue)
-            changePrev();
-            incrementCount();
-            resultFunc();
-          }
+      else if (((box4 == box5)&&(box5 == box6))&&(box4 != "")){
+        setResult(`Player ${box4} Won`);
+        setRunTicTac(false);
+        setWinLine456(true);
       }
-    }
+      else if (((box7 == box8)&&(box8 == box9))&&(box7 != "")){
+        setResult(`Player ${box7} Won`);
+        setRunTicTac(false);
+        setWinLine789(true);
+      }
+      else if (((box1 == box4)&&(box4 == box7))&&(box1 != "")){
+        setResult(`Player ${box1} Won`);
+        setRunTicTac(false);
+        setWinLine147(true);
+      }
+      else if (((box2 == box5)&&(box5 == box8))&&(box2 != "")){
+        setResult(`Player ${box2} Won`);
+        setRunTicTac(false);
+        setWinLine258(true);
+      }
+      else if (((box3 == box6)&&(box6 == box9))&&(box9 != "")){
+        setResult(`Player ${box9} Won`);
+        setRunTicTac(false);
+        setWinLine369(true);
+      }
+      else if (((box1 == box5)&&(box5 == box9))&&(box1 != "")){
+        setResult(`Player ${box1} Won`);
+        setRunTicTac(false);
+        setWinLine159(true);
+      }
+      else if (((box3 == box5)&&(box5 == box7))&&(box3 != "")){
+        setResult(`Player ${box3} Won`);
+        setRunTicTac(false);
+        setWinLine357(true);
+      }
+      else if(counter == 9){
+        setResult("Tie");
+      }
 
+    },[box1, box2, box3, box4, box5, box6, box7, box8, box9])
 
     function restart() {
       setBox1("");
@@ -128,9 +157,18 @@ export default function Project2(){
       setBox7("");
       setBox8("");
       setBox9("");
-      setResult("Match Result")
-      setCounter(0)
-      setPrevValue("o")
+      setResult("Match Result");
+      setCounter(0);
+      setPrevValue("o");
+      setRunTicTac(true);
+      setWinLine123(false);
+      setWinLine456(false);
+      setWinLine789(false);
+      setWinLine147(false);
+      setWinLine258(false);
+      setWinLine369(false);
+      setWinLine159(false);
+      setWinLine357(false);
     }
 
     return(
@@ -160,6 +198,14 @@ export default function Project2(){
                   {box8}</div>
                 <div className={`${classes.boxes}`} onClick={()=>ticTac(9)}>
                   {box9}</div>
+                <div className={winLine123?`${classes.line123} ${classes.displayVid}`:`${classes.line123} ${classes.displayHid}`}></div>
+                <div className={winLine456?`${classes.line456} ${classes.displayVid}`:`${classes.line123} ${classes.displayHid}`}></div>
+                <div className={winLine789?`${classes.line789} ${classes.displayVid}`:`${classes.line123} ${classes.displayHid}`}></div>
+                <div className={winLine147?`${classes.line147} ${classes.displayVid}`:`${classes.line123} ${classes.displayHid}`}></div>
+                <div className={winLine258?`${classes.line258} ${classes.displayVid}`:`${classes.line123} ${classes.displayHid}`}></div>
+                <div className={winLine369?`${classes.line369} ${classes.displayVid}`:`${classes.line123} ${classes.displayHid}`}></div>
+                <div className={winLine159?`${classes.line159} ${classes.displayVid}`:`${classes.line123} ${classes.displayHid}`}></div>
+                <div className={winLine357?`${classes.line357} ${classes.displayVid}`:`${classes.line123} ${classes.displayHid}`}></div>
               </div>
             </div>
             <div className={classes.result}>
