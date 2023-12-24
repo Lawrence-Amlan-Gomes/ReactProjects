@@ -1,5 +1,6 @@
 import classes from "./Styles/project2.module.css";
 import { useState, useEffect } from "react";
+
 export default function Project2(){
     const [box1, setBox1] = useState("");
     const [box2, setBox2] = useState("");
@@ -10,6 +11,16 @@ export default function Project2(){
     const [box7, setBox7] = useState("");
     const [box8, setBox8] = useState("");
     const [box9, setBox9] = useState("");
+
+    const [aniBox1, setaniBox1] = useState(false);
+    const [aniBox2, setaniBox2] = useState(false);
+    const [aniBox3, setaniBox3] = useState(false);
+    const [aniBox4, setaniBox4] = useState(false);
+    const [aniBox5, setaniBox5] = useState(false);
+    const [aniBox6, setaniBox6] = useState(false);
+    const [aniBox7, setaniBox7] = useState(false);
+    const [aniBox8, setaniBox8] = useState(false);
+    const [aniBox9, setaniBox9] = useState(false);
 
     const [winLine123, setWinLine123] = useState(false);
     const [winLine456, setWinLine456] = useState(false);
@@ -44,55 +55,64 @@ export default function Project2(){
         switch (num) {
           case 1:
             if(box1 == ""){
-              setBox1(prevValue)
+              setBox1(prevValue);
+              setaniBox1(true);
               changePrev();
             }
             break;
           case 2:
             if(box2 == ""){
-              setBox2(prevValue)
+              setBox2(prevValue);
+              setaniBox2(true);
               changePrev();
             }
             break;
           case 3:
             if(box3 == ""){
-              setBox3((prevState)=>prevState=prevValue);
+              setBox3(prevValue);
+              setaniBox3(true);
               changePrev();
             }
             break;
           case 4:
             if(box4 == ""){
-              setBox4(prevValue)
+              setBox4(prevValue);
+              setaniBox4(true);
               changePrev();
             }
             break;
           case 5:
             if(box5 == ""){
-              setBox5(prevValue)
+              setBox5(prevValue);
+              setaniBox5(true);
               changePrev();
             }
             break;
           case 6:
             if(box6 == ""){
-              setBox6(prevValue)
+              setBox6(prevValue);
+              setaniBox6(true);
               changePrev();
             }
             break;
           case 7:
             if(box7 == ""){
-              setBox7(prevValue)
+              setBox7(prevValue);
+              setaniBox7(true);
               changePrev();
             }
             break;
           case 8:
             if(box8 == ""){
-              setBox8(prevValue)
+              setBox8(prevValue);
+              setaniBox8(true);
               changePrev();
             }
             break;
           case 9:
             if(box9 == ""){
-              setBox9(prevValue)
+              setBox9(prevValue);
+              setaniBox9(true);
               changePrev();
             }
         }
@@ -169,6 +189,15 @@ export default function Project2(){
       setWinLine369(false);
       setWinLine159(false);
       setWinLine357(false);
+      setaniBox1(false);
+      setaniBox2(false);
+      setaniBox3(false);
+      setaniBox4(false);
+      setaniBox5(false);
+      setaniBox6(false);
+      setaniBox7(false);
+      setaniBox8(false);
+      setaniBox9(false);
     }
 
     return(
@@ -180,23 +209,23 @@ export default function Project2(){
             </div>
             <div className={classes.section2}>
               <div className={classes.playBox}>
-                <div className={`${classes.boxes}`} onClick={()=>ticTac(1)}>
+                <div className={aniBox1?`${classes.boxes} ${classes.grow}`:`${classes.boxes}`} onClick={()=>ticTac(1)}>
                   {box1}</div>
-                <div className={`${classes.boxes} ${classes.middleBoxes2}`} onClick={()=>ticTac(2)}>
+                <div className={aniBox2?`${classes.boxes} ${classes.grow} ${classes.middleBoxes2}`:`${classes.boxes} ${classes.middleBoxes2}`} onClick={()=>ticTac(2)}>
                   {box2}</div>
-                <div className={`${classes.boxes}`} onClick={()=>ticTac(3)}>
+                <div className={aniBox3?`${classes.boxes} ${classes.grow}`:`${classes.boxes}`} onClick={()=>ticTac(3)}>
                   {box3}</div>
-                <div className={`${classes.boxes} ${classes.middleBoxes}`} onClick={()=>ticTac(4)}>
+                <div className={aniBox4?`${classes.boxes} ${classes.grow} ${classes.middleBoxes}`:`${classes.boxes} ${classes.middleBoxes}`} onClick={()=>ticTac(4)}>
                   {box4}</div>
-                <div className={`${classes.boxes} ${classes.middleBoxes} ${classes.middleBoxes2}`} onClick={()=>ticTac(5)}>
+                <div className={aniBox5?`${classes.boxes} ${classes.grow} ${classes.middleBoxes2} ${classes.middleBoxes}`:`${classes.boxes} ${classes.middleBoxes2} ${classes.middleBoxes}`} onClick={()=>ticTac(5)}>
                   {box5}</div>
-                <div className={`${classes.boxes} ${classes.middleBoxes}`} onClick={()=>ticTac(6)}>
+                <div className={aniBox6?`${classes.boxes} ${classes.grow} ${classes.middleBoxes}`:`${classes.boxes} ${classes.middleBoxes}`} onClick={()=>ticTac(6)}>
                   {box6}</div>
-                <div className={`${classes.boxes}`} onClick={()=>ticTac(7)}>
+                <div className={aniBox7?`${classes.boxes} ${classes.grow}`:`${classes.boxes}`} onClick={()=>ticTac(7)}>
                   {box7}</div>
-                <div className={`${classes.boxes} ${classes.middleBoxes2}`} onClick={()=>ticTac(8)}>
+                <div className={aniBox8?`${classes.boxes} ${classes.grow} ${classes.middleBoxes2}`:`${classes.boxes} ${classes.middleBoxes2}`} onClick={()=>ticTac(8)}>
                   {box8}</div>
-                <div className={`${classes.boxes}`} onClick={()=>ticTac(9)}>
+                <div className={aniBox9?`${classes.boxes} ${classes.grow}`:`${classes.boxes}`} onClick={()=>ticTac(9)}>
                   {box9}</div>
                 <div className={winLine123?`${classes.line123} ${classes.displayVid}`:`${classes.line123} ${classes.displayHid}`}></div>
                 <div className={winLine456?`${classes.line456} ${classes.displayVid}`:`${classes.line123} ${classes.displayHid}`}></div>

@@ -47,10 +47,10 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    font-size: 40px;
     color: rgb(0, 0, 0);
     cursor: pointer;
     padding-bottom: 10px;
+    font-size: 50px;
 }
 .line123{
     position: absolute;
@@ -115,6 +115,38 @@
 }
 .displayVid{
     visibility: visible;
+}
+.grow{
+    animation-name: smallToBig;
+    animation-duration: 0.2s;
+    animation-iteration-count: 1;
+}
+@keyframes smallToBig{
+    0%{
+        font-size: 50px;
+        height: 33.33%;
+        width: 33.33%;
+    }
+    25%{
+        font-size: 40px;
+        height: 33.33%;
+        width: 33.33%;
+    }
+    50%{
+        font-size: 30px;
+        height: 33.33%;
+        width: 33.33%;
+    }
+    75%{
+        font-size: 40px;
+        height: 33.33%;
+        width: 33.33%;
+    }
+    100%{
+        font-size: 50px;
+        height: 33.33%;
+        width: 33.33%;
+    }
 }
 .displayHid{
     visibility: hidden;
