@@ -4,7 +4,7 @@ import "../All/Styles/global.css";
 import Home from "./Component/Home";
 import App1 from "../Project1/App";
 import App2 from "../Project2/App";
-// import App3 from "../Project3/App";
+import App3 from "../Project3/App";
 
 
 function App() {
@@ -19,7 +19,7 @@ function App() {
             <Route path="/hello" element={<Home />}/>
             <Route path="/project1" element={<App1 />}/>
             <Route path="/project2" element={<App2 />}/>
-            {/* <Route path="/project3" element={<App3 />}/> */}
+            <Route path="/project3" element={<App3 />}/>
           </Routes>
         </div>
         <div className="footer">
