@@ -120,4 +120,7 @@
     background-color: rgb(185, 0, 0);
     color: rgb(255, 255, 255);
 }
+.displayNone{
+    display: none;
+}
 
