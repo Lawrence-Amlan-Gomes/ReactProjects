@@ -38,6 +38,12 @@ export default function Header() {
               Project 4
             </NavLink>
           </div>
+          <div className={classes.listStyle}>
+            <NavLink to="/project5" className={(navInfo)=>(
+              navInfo.isActive ? classes.active : classes.headerStyle)}>
+              Project 5
+            </NavLink>
+          </div>
         </div>
       </div>
     </div>

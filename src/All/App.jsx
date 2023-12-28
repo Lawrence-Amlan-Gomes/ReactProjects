@@ -6,6 +6,7 @@ import App1 from "../Project1/App";
 import App2 from "../Project2/App";
 import App3 from "../Project3/App";
 import App4 from "../Project4/App";
+import App5 from "../Project5/App";
 
 
 function App() {
@@ -22,6 +23,7 @@ function App() {
             <Route path="/project2" element={<App2 />}/>
             <Route path="/project3" element={<App3 />}/>
             <Route path="/project4" element={<App4 />}/>
+            <Route path="/project5" element={<App5 />}/>
           </Routes>
         </div>
         <div className="footer">
